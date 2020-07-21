@@ -1,24 +1,78 @@
-# Implement A Multiplication Table
+# Create JS Workspace
 
-Please read the following requirement:
+## Domo
 
-I want to create a multiplication table. The input should be 2 integers specifying the start and the end of the table:
+Please go through the demo to create a javascript workspace.
 
-AC1: The start number must be smaller than or equal to the end number. Or the function will return `null`.
-
-AC2: The start number and the end number can be any number in a range of 1 to 1000 (inclusive).
-
-AC3: The output should be a string represents the multiplication table. Suppose that the start number is _2_ and the end number is _4_, the output should be something like the following. Please note that all columns should be aligned properly.
+*Step1: Create directory*
 
 ```
-2*2=4
-2*3=6  3*3=9
-2*4=8  3*4=12  4*4=16
+$ mkdir js-workspace
 ```
 
-## Acceptance Criteria
+*Step2: Step into the directory and initialize a repository. Then copy `.gitignore` file to that directory*
 
-- Please draw task diagrams.
-- Please define all the methods according to your task diagram.
-- Please write down a test case using _given...when...then_ pattern for a leaf block. Then implement the block to pass the test.
-- Please continue doing this work until all the requirement has been fulfilled.,
+> The `.gitignore` file content can be found at https://github.com/github/gitignore/blob/master/Node.gitignore
+
+```
+$ git init
+```
+
+*Step3: Create a node-js workspace by creating a package.json file.*
+
+```
+$ npm init
+```
+
+*Step4: Add dependencies for your project. Currently, we depend on JEST, which is a unit test framework.*
+
+```
+$ npm install jest --save-dev
+```
+
+*Step5: create a folder to hold all the test.*
+
+```
+$ mkdir __tests__
+```
+
+*Step6: Create a unit-test file under the `__tests__` folder, and a source code file under the root folder.*
+
+```
+$ touch main.js ## if you use PowerShell please type: New-Item main.js -Type File
+$ cd __tests__
+$ touch main-spec.js
+```
+
+*Step7: Write a test first*
+
+```js
+const add = require('../main');
+
+it ('should add two numbers', () => {
+    expect(add(2, 3)).toBe(5);
+});
+```
+
+*Step8: run the test from the command line:*
+
+```
+## Suppose that we are in the root folder
+$ node_modules/.bin/jest
+```
+
+*Step9: Oh my! the test failed. Let's fix it in `main.js` file*
+
+```js
+function add (left, right) {
+    return left + right;
+}
+
+module.exports = add;
+```
+
+*Step10: Run the test again.*
+
+## Practice
+
+Please do it again all by yourselfs in 10 minutes.
